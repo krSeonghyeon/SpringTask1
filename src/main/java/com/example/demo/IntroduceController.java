@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IntroduceController {
 
     @GetMapping("/introduce")
-    public String introduce(@RequestParam("name") String name, Model model) {
+    public String introduce(@RequestParam(name="name", required=false, defaultValue="undefined") String name, Model model) {
         model.addAttribute("name", name);
         return "introduce";
     }
