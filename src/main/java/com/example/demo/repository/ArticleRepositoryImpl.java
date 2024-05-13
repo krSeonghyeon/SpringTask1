@@ -27,6 +27,7 @@ public class ArticleRepositoryImpl implements ArticleRepository{
 
     @Override
     public Article updateById(Long id, Article updateArticle) {
+        updateArticle.setId(id);
         store.put(id, updateArticle);
         return updateArticle;
     }
